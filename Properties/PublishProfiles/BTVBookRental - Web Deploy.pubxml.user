@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAI0ICC6aOB0KFmqFBAiWK1AAAAAACAAAAAAAQZgAAAAEAACAAAACown/HRLGipgS6/5TDNdr+jZKxtm5o9wjGK1RciiG4KQAAAAAOgAAAAAIAACAAAABoY1Fz9HHfmF0aSy1QwwFXOe0FF2VIROnjboO5dRs5foAAAABcLihY/m+K30szxwZd/yZro+KqUBO3S+yOxJtsqp9K9GbsjgEWAf2i1P9xQsoR/v1oR5kgGF02RFLEYJMsLPrECVFzpquL/yTQp78SfqqBmD7/vQdAwPe4i9vyPiEY8bPrWFi7wnAGS0AIcOe/amUeT7ZhOz1ukFbW799TfGi1CkAAAAD41WKFL9qXaUrO4vpGMuYy3ADLMe8qzNTBHP+pFzxvGExmgnHLg3TsH3EH6oVhpAZeCv+ZGskavS/NMs7Prssh</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="BTVBookRentalContext">
+      <Value>Data Source=tcp:btvbookrentaldbserver.database.windows.net,1433%3bInitial Catalog=BTVBookRental_db%3bUser Id=btvbookrentaldbserver%40btvbookrentaldbserver%3bPassword=ManchesterUnit3d</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

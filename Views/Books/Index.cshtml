@@ -1,0 +1,79 @@
+﻿@model BTVBookRental.Models.BookGenreViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista carti din librarie</h2>
+
+<p>
+    <a asp-action="Create">Adauga carte noua</a>
+</p>
+
+<form asp-controller="Books" asp-action="Index" method="get">
+
+    <p>
+        <select asp-for="BookGen" asp-items="Model.Gen">
+            <option value="">Toate</option>
+        </select>
+
+        Titlu: <input type="text" name="SearchString">
+        <input type="submit" value="Cauta" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Titlu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].AnAparitie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Gen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titlu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnAparitie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editeaza</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Stergere</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Vezi mai multe detalii</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

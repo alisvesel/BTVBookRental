@@ -1,0 +1,37 @@
+﻿@model BTVBookRental.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h3>Sunteti sigur ca doriti sa stergeti acest element?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumePrenume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumePrenume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumarMatricol)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumarMatricol)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Specializarea)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Specializarea)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sterge" class="btn btn-default" />
+        <input type="submit" asp-action="Index" value="Inapoi" class="btn btn-default" />
+    </form>
+</div>

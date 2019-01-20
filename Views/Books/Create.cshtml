@@ -1,0 +1,60 @@
+﻿@model BTVBookRental.Models.Book
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Adauga carte noua</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Titlu" class="control-label"></label>
+                <input asp-for="Titlu" class="form-control" />
+                <span asp-validation-for="Titlu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Autor" class="control-label"></label>
+                <input asp-for="Autor" class="form-control" />
+                <span asp-validation-for="Autor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnAparitie" class="control-label"></label>
+                <input asp-for="AnAparitie" class="form-control" />
+                <span asp-validation-for="AnAparitie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gen" class="control-label"></label>
+                <input asp-for="Gen" class="form-control" />
+                <span asp-validation-for="Gen" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-group">
+                    <option value="Inchiriat">Inchiriat</option>
+                    <option value="Neinchiriat">Neinchiriat</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salveaza" class="btn btn-default" />
+                <input type="submit" value="Inapoi" a asp-action="Index" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+    }
+

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BTVBookRental.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista studenti inscrisi</h2>
+<p>
+    <a asp-action="Create">Adauga un student nou</a>
+</p>
+
+
+<form asp-controller="Students" asp-action="Index">
+    <p>
+        Nume: <input type="text" name="SearchString">
+        <input type="submit" value="Cauta" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumePrenume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumarMatricol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specializarea)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumePrenume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumarMatricol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specializarea)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editeaza</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Sterge</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Mai multe detalii</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

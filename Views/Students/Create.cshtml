@@ -1,0 +1,41 @@
+﻿@model BTVBookRental.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Adauga student nou</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NumePrenume" class="control-label"></label>
+                <input asp-for="NumePrenume" class="form-control" />
+                <span asp-validation-for="NumePrenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumarMatricol" class="control-label"></label>
+                <input asp-for="NumarMatricol" class="form-control" />
+                <span asp-validation-for="NumarMatricol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specializarea" class="control-label"></label>
+                <input asp-for="Specializarea" class="form-control" />
+                <span asp-validation-for="Specializarea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salveaza" class="btn btn-default" />
+                <input type="submit" value="Inapoi" a asp-action="Index" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
